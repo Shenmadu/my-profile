@@ -15,6 +15,14 @@
   gap: 64px;
   font-family: var(--font-geist-sans);
 }
+.text{
+  font-weight:100 !important;
+}
+.header{
+  color: antiquewhite !important;
+}
+
+
 
 @media (prefers-color-scheme: dark) {
   .page {

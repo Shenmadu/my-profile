@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
-
+import { Spicy_Rice } from 'next/font/google'; // Import the Poppins Google Font
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -14,6 +14,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+
+const spicyRice = Spicy_Rice({
+  weight: '400', 
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -33,7 +38,7 @@ export default function RootLayout({
           <nav className="navbar navbar-expand-lg">
             <div className="container-fluid bar">
               <a className="navbar-brand " href="#"></a>
-              <span>Tashen Madhuwantha</span>
+              <span className={spicyRice.className}>Tashen Madhuwantha</span>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >
                 <span className="navbar-toggler-icon"></span>
               </button>
@@ -43,14 +48,14 @@ export default function RootLayout({
                     <Link href={"/"} className="nav-link white-text">Home</Link>
                   </li>
                   <li className="nav-item btn">
-                    <Link href={"/experience"} className="nav-link white-text">Experience</Link>
-                  </li>
-                  <li className="nav-item btn">
-                    <Link href={"/skills"} className="nav-link white-text">Skills</Link>
+                    <Link href={"/experience"} className="nav-link white-text">About</Link>
                   </li>
                   <li className="nav-item btn">
                     <Link href={"/my-projects"} className="nav-link white-text">Projects</Link>
                   </li>
+                  <li className="nav-item btn">
+                    <Link href={"/skills"} className="nav-link white-text">Skills</Link>
+                  </li>                 
                   <li className="nav-item btn">
                     <Link href={"/contact"} className="nav-link white-text">Contacts</Link>
                   </li>
