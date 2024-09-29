@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Link from "next/link";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,6 +28,38 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+
+        <div className="container-fluid bg text-white">
+          <nav className="navbar navbar-expand-lg">
+            <div className="container-fluid bar">
+              <a className="navbar-brand " href="#"></a>
+              <span>Tashen Madhuwantha</span>
+              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="navbarNav">
+                <ul className="navbar-nav  ms-auto">
+                  <li className="nav-item btn">
+                    <Link href={"/"} className="nav-link white-text">Home</Link>
+                  </li>
+                  <li className="nav-item btn">
+                    <Link href={"/experience"} className="nav-link white-text">Experience</Link>
+                  </li>
+                  <li className="nav-item btn">
+                    <Link href={"/skills"} className="nav-link white-text">Skills</Link>
+                  </li>
+                  <li className="nav-item btn">
+                    <Link href={"/my-projects"} className="nav-link white-text">Projects</Link>
+                  </li>
+                  <li className="nav-item btn">
+                    <Link href={"/contact"} className="nav-link white-text">Contacts</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+
         {children}
       </body>
     </html>
