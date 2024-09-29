@@ -1,6 +1,9 @@
 "use client";
 import Image from "next/image";
 import MyImage from "./assests/myimg.jpg";
+import Fb from "./assests/fbicon.png";
+import In from "./assests/inicon.png";
+import Inst from "./assests/instimg.png";
 import styles from "./page.module.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AOS from 'aos'
@@ -11,7 +14,7 @@ import { useEffect, useRef } from "react";
 import { Concert_One } from 'next/font/google';
 
 const concertOne = Concert_One({
-  weight: '400', 
+  weight: '400',
   subsets: ['latin'],
 })
 
@@ -27,13 +30,13 @@ export default function Home() {
       backSpeed: 50,  // Speed of deleting
       loop: true      // Loop typing
     };
-   
+
     const typed = new Typed(typedElement.current, options);
-  // Clean up when the component is unmounted
-  return () => {
-    typed.destroy();
-  };
-}, []);
+    // Clean up when the component is unmounted
+    return () => {
+      typed.destroy();
+    };
+  }, []);
 
   return (
     <div className="container">
@@ -44,12 +47,20 @@ export default function Home() {
           </div>
           <div className="col-lg-6 " data-aos="fade-left">
             <h1 className={`mb-3 white-text ${concertOne.className}`} ref={typedElement}></h1>
-           
+
             <p className={styles.header}>
               Full Stack Developer with expertise in Java, PHP, Next.js, Node.js, React, Angular, Laravel, Spring Boot, AWS, and Express.js.
               I have a comprehensive understanding of both backend and frontend frameworks, enabling me to create dynamic, scalable, and responsive applications.
               Eager to apply my knowledge in real-world projects, showcasing a commitment to continuous learning and innovation in the ever-evolving field of software development.
             </p>
+            <div className="d-grid gap-2 d-md-flex justify-content-md-start">
+
+              <Image src={Fb} className="m-lg-1" alt="..." />
+              {/* <Image src={In} className="m-lg-2" alt="..." /> */}
+              <Image src={Inst} className="m-lg-2" alt="..." />
+
+
+            </div>
 
           </div>
         </div>
