@@ -1,131 +1,57 @@
 import React from 'react'
 import Image from "next/image";
 import pos from "../assests/fx.png";
-import library from "../assests/lib.jpg";
+import libraryImg from "../assests/lib.jpg";
 import student from "../assests/std.png";
 import invent from "../assests/inventory.png";
 import burger from "../assests/burgershop.png";
 import swing from "../assests/swing.png";
+import weather from "../assests/weather.png";
+import country from "../assests/weather (2).png";
 
 
 function page() {
-  return (
-    <div className='container'>
+    const projects = [
+        { name: 'Weather App', image:weather, subName: 'React Front-end web application', link1: "https://shenmadu.github.io/weather_app", link2: "#" },
+        { name: 'Library managmnet', image:libraryImg, subName: 'Angular Front-end and Spring boot Back-end', link1: "https://github.com/Shenmadu/Librarymanagment-Frontend.git", link2: "https://github.com/Shenmadu/Librarymanagment-Frontend.git" },
+        { name: 'Country Details App', image:country, subName: ' React JS Project axios Library , MUI & Tailwind CSS', link1: " https://shenmadu.github.io/country-details", link2: "#" },        
+        { name: 'Student Registration', image:student, subName: 'Angular Front-end and Spring boot Back-end', link1: " https://github.com/Shenmadu/StudentRegistration-frontend.git", link2: "https://github.com/Shenmadu/StudentRegistration-backend.git" },
+        { name: 'POS System-FX', image:pos, subName: 'Maven POS system use Hibernate', link1: "https://github.com/Shenmadu/POS-Layered-Architecture-.git", link2: "https://github.com/Shenmadu/POS-Layered-Architecture-.git" },
+        { name: 'Inventory-management', image:invent, subName: 'Java FX Hibernate & Layered', link1: "https://github.com/Shenmadu/Inventory-management.git", link2: "#" },
+        { name: 'Burger Shop Application', image:burger, subName: 'HTML ,CSS, JavaScript', link1: "https://github.com/Shenmadu/MOS-Burgers.git", link2: "https://github.com/Shenmadu/MOS-Burgers.git" },
+        { name: 'Fashion shop', image:swing, subName: 'Java swing fashion shop', link1: "https://github.com/Shenmadu/FashionShop.git", link2: "#" },
+
+    ];
+    return (
+        <div className='container'>
             <div className=" bg-transparent text-white" id="education">
-                <section className="education" id="education">
-                    {/* <h1 className="header-two">My Works</h1> */}
+                <section className="education" id="education">                    
                     <div className="row col-lg-12">
-
-                        <div className="card mt-2 mx-auto" id="item1"
-                            style={{width :'13rem', height:'auto', display: 'inline-block'}} data-aos="zoom-in">
-                            <Image src={library} className="card-img-top " alt="..." style={{height: 200}} />
-                            <div className="card-body">
-                                <h6 className="card-title" >Library managmnet</h6>
-                                <p className="card-text" >Angular Front-end and Spring boot
-                                    Back-end
-                                </p>
-                                <a href=" https://github.com/Shenmadu/Librarymanagment-
-                                        Frontend.git"/>
-                                <p >
-                                    https://github.com/Shenmadu/Librarymanagment-
-                                    Frontend.git</p>
-                                <a href="  https://github.com/Shenmadu/Librarymanagment-
-                                                Frontend.git">
-                                    <p >
-                                        https://github.com/Shenmadu/Librarymanagment-
-                                        Frontend.git</p>
-                                </a>
+                        {projects.slice(0).map((project, index) => (
+                            <div key={index} className="col-lg-3 mb-3">
+                                <div className="card mt-2 mx-auto" id="item1"
+                                    style={{ width: '13rem', height: '400px', display: 'inline-block' }} data-aos="zoom-in">
+                                    <Image src={project.image} className="card-img-top " alt="..." style={{ height: 200 }} />
+                                    <div className="card-body">
+                                        <h6 className="card-title" >{project.name}</h6>
+                                        <p className="card-text" >{project.subName}</p>
+                                        <p>
+                                            <a href={project.link1} target='blank'>View</a>
+                                        </p>
+                                        {project.link2 !== '#' && (
+                                            <p>
+                                                <a href={project.link2} target="_blank">View</a>
+                                            </p>
+                                        )}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-
-
-
-                        <div className="card mt-2 mx-auto" id="item1"
-                            style={{width :'13rem', height:'auto', display: 'inline-block'}} data-aos="zoom-in">
-                            <Image src={pos} className="card-img-top " alt="..." style={{height: 200}} />
-                            <div className="card-body">
-                                <h6 className="card-title" >POS System-FX</h6>
-                                <p className="card-text" >Maven POS system use Hibernate
-                                </p>
-                                <a href="https://github.com/Shenmadu/POS-Layered-Architecture-.git">
-                                    <p>
-                                        https://github.com/Shenmadu/POS-Layered-Architecture-.git</p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div className="card mt-2 mx-auto" id="item1"
-                            style={{width :'13rem', height:'auto', display: 'inline-block'}} data-aos="zoom-in">
-                            <Image src={student} className="card-img-top " alt="..." style={{height: 200}} />
-                            <div className="card-body">
-                                <h6 className="card-title" >Student Registration</h6>
-                                <p className="card-text">Angular Front-end and Spring boot
-                                    Back-end
-                                </p>
-                                <a href=" https://github.com/Shenmadu/StudentRegistration-frontend.git">
-                                    <p >
-                                        https://github.com/Shenmadu/StudentRegistration-frontend.git
-                                    </p>
-                                </a>
-                                <a href="https://github.com/Shenmadu/StudentRegistration-backend.git">
-                                    <p >
-                                        https://github.com/Shenmadu/StudentRegistration-backend.git</p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div className="card mt-2 mx-auto" id="item1"
-                            style={{width :'13rem', height:'auto', display: 'inline-block'}} data-aos="zoom-in">
-                            <Image src={invent} className="card-img-top" alt="..."
-                               style={{height: 200}} />
-                            <div className="card-body">
-                                <h6 className="card-title" >Inventory-management</h6>
-                                <p className="card-text" >Java FX Hibernate & Layered
-                                </p>
-                                <a href="https://github.com/Shenmadu/Inventory-management.git">
-                                    <p >
-                                        https://github.com/Shenmadu/Inventory-management.git</p>
-                                </a>
-
-                            </div>
-                        </div>
-
-                        <div className="card mt-2 mx-auto " id="item1"
-                             style={{width :'13rem', height:'auto', display: 'inline-block'}} data-aos="zoom-in">
-
-                            <Image src={burger} className="card-img-top img-card"
-                                style={{height: 200}} alt="..." />
-                            <div className="card-body">
-                                <h6 className="card-title" >Burger Shop Application</h6>
-                                <p className="card-text">Html ,CSS, JavaScript
-                                </p>
-                                <a href="https://github.com/Shenmadu/MOS-Burgers.git">
-                                    <p >
-                                        https://github.com/Shenmadu/MOS-Burgers.git</p>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div className="card mt-2 mx-auto " id="item1"
-                            style={{width :'13rem', height:'auto', display: 'inline-block'}} data-aos="zoom-in">
-
-                            <Image src={swing} className="card-img-top img-card" style={{height: 200}}
-                                alt="..." />
-                            <div className="card-body">
-                                <h6 className="card-title" >Fashion shop</h6>
-                                <p className="card-text">Java swing fashion shop
-                                </p>
-                                <a href="https://github.com/Shenmadu/FashionShop.git">
-                                    <p >
-                                        https://github.com/Shenmadu/FashionShop.git</p>
-                                </a>
-                            </div>
-                        </div>
+                        ))}                       
                     </div>
                 </section>
             </div>
         </div>
-  )
+    )
 }
 
 export default page
