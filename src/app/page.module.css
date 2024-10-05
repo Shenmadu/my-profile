@@ -22,7 +22,14 @@
   color: antiquewhite !important;
 }
 
+.expImg{
+  width: 25px;
+  height: 25px;
+}
 
+.expText{
+  color:#C499F3;
+}
 
 @media (prefers-color-scheme: dark) {
   .page {

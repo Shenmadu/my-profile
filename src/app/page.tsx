@@ -2,7 +2,8 @@
 import Image from "next/image";
 import MyImage from "./assests/myimg.jpg";
 import Fb from "./assests/fbicon.png";
-import Inst from "./assests//gitimg.png";
+import Inst from "./assests/gitimg.png";
+import exp from "./assests/882743.png";
 import styles from "./page.module.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AOS from 'aos'
@@ -47,20 +48,22 @@ export default function Home() {
           <div className="col-lg-6 " data-aos="fade-left">
             <h1 className={`mb-3 white-text ${concertOne.className}`} ref={typedElement}></h1>
 
+            <div className="bg-transparent text-white">           
+              <div className="d-grid gap-2 d-md-flex justify-content-md-start">
+                <Image src={exp} className={styles.expImg} alt="..." /> 
+              </div>
+            <p className={styles.expText}>Experience</p>
+            </div>
+
             <p className={styles.header}>
               Full Stack Developer with expertise in Java, PHP, Next.js, Node.js, React, Angular, Laravel, Spring Boot, AWS, and Express.js.
               I have a comprehensive understanding of both backend and frontend frameworks, enabling me to create dynamic, scalable, and responsive applications.
               Eager to apply my knowledge in real-world projects, showcasing a commitment to continuous learning and innovation in the ever-evolving field of software development.
             </p>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-
-              <Image src={Fb} className="m-lg-1" alt="..." />
-              {/* <Image src={In} className="m-lg-2" alt="..." /> */}
+              <Image src={Fb} className="m-lg-1" alt="..." />             
               <Image src={Inst} className="m-lg-2" alt="..." />
-
-
             </div>
-
           </div>
         </div>
       </div>
