@@ -2,7 +2,7 @@
 import Image from "next/image";
 import MyImage from "./assests/myimg.jpg";
 import Fb from "./assests/fbicon.png";
-import Inst from "./assests/instimg.png";
+import Inst from "./assests//gitimg.png";
 import styles from "./page.module.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AOS from 'aos'

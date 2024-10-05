@@ -10,7 +10,7 @@ import swing from "../assests/swing.png";
 
 function page() {
   return (
-    <div>
+    <div className='container'>
             <div className=" bg-transparent text-white" id="education">
                 <section className="education" id="education">
                     {/* <h1 className="header-two">My Works</h1> */}
