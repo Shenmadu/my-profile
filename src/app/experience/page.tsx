@@ -39,8 +39,8 @@ function page() {
               <div className="edu-content">
                 <div className="content">
                   <div className="year"><i className='bx bxs-calendar '>2023-2024</i></div>
-                  <h4 className="sub-topic">Full stack development Trainning Program</h4>
-                  <p>Institute of computer Engineering Technology (Icet Cetified Master)</p>
+                  <h4 className="sub-topic">Trainee Software Engineer -Full stack</h4>
+                  <p>Full stack development Trainning Program Institute of computer Engineering Technology (Icet Cetified Master)</p>
                 </div>
               </div>
               <div className="edu-content">
