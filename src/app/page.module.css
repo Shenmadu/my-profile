@@ -22,13 +22,16 @@
   color: antiquewhite !important;
 }
 
-.expImg{
+.exp{
   width: 25px;
   height: 25px;
 }
 
 .expText{
   color:#C499F3;
+}
+.exp{
+  color:red;
 }
 
 @media (prefers-color-scheme: dark) {

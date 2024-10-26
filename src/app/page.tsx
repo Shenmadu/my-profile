@@ -25,7 +25,7 @@ export default function Home() {
     AOS.init({ duration: 3000 });
 
     const options = {
-      strings: ["I’m Tashen Madhuwantha"], // The text that will be typed
+      strings: ["’m Tashen"], // The text that will be typed
       typeSpeed: 100, // Speed of typing       
       backSpeed: 50,  // Speed of deleting
       loop: true      // Loop typing
@@ -46,11 +46,12 @@ export default function Home() {
             <Image src={MyImage} className="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="400" height="300" loading="lazy" />
           </div>
           <div className="col-lg-6 " data-aos="fade-left">
-            <h1 className={`mb-3 white-text ${concertOne.className}`} ref={typedElement}></h1>
-
+            <h1 className={`mb-3 white-text ${concertOne.className}`}>
+              <span>I</span><span ref={typedElement}></span> {/* Fixed "I" and typed text */}
+            </h1>
             <div className="bg-transparent text-white">           
               <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-                <Image src={exp} className={styles.expImg} alt="..." /> 
+                <div className={styles.exp}>1+</div>                
               </div>
             <p className={styles.expText}>Experience</p>
             </div>
