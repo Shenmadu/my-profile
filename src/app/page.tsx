@@ -3,7 +3,6 @@ import Image from "next/image";
 import MyImage from "./assests/myimg.jpg";
 import Fb from "./assests/fbicon.png";
 import Inst from "./assests/gitimg.png";
-import exp from "./assests/882743.png";
 import styles from "./page.module.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AOS from 'aos'
