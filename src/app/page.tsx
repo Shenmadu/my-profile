@@ -5,33 +5,32 @@ import Fb from "./assests/fbicon.png";
 import Inst from "./assests/gitimg.png";
 import styles from "./page.module.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AOS from 'aos'
-import 'aos/dist/aos.js'
-import 'aos/dist/aos.css'
-import Typed from 'typed.js'; // Import Typed.js
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Typed from 'typed.js';
 import { useEffect, useRef } from "react";
 import { Concert_One } from 'next/font/google';
 
 const concertOne = Concert_One({
   weight: '400',
   subsets: ['latin'],
-})
+});
 
 export default function Home() {
-  const typedElement = useRef(null); // Reference to the element for typing effect
+  const typedElement = useRef(null);
 
   useEffect(() => {
     AOS.init({ duration: 3000 });
 
     const options = {
-      strings: ["’m Tashen"], // The text that will be typed
-      typeSpeed: 100, // Speed of typing       
-      backSpeed: 50,  // Speed of deleting
-      loop: true      // Loop typing
+      strings: ["’m Tashen"],
+      typeSpeed: 100,
+      backSpeed: 50,
+      loop: true,
     };
 
     const typed = new Typed(typedElement.current, options);
-    // Clean up when the component is unmounted
     return () => {
       typed.destroy();
     };
@@ -39,35 +38,48 @@ export default function Home() {
 
   return (
     <div className="container">
-      <div className="container col-xxl-8 px-1 py-1">
-        <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
-          <div className="col-10 col-sm-8 col-lg-6" data-aos="fade-right">
-            <Image src={MyImage} className="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="400" height="300" loading="lazy" />
-          </div>
-          <div className="col-lg-6 " data-aos="fade-left">
-            <h1 className={`mb-3 white-text ${concertOne.className}`}>
-              <span>I</span><span ref={typedElement}></span> {/* Fixed "I" and typed text */}
-            </h1>
-            <div className="bg-transparent text-white">           
-              <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-                <div className={styles.exp}>1+</div>                
-              </div>
-            <p className={styles.expText}>Experience</p>
-            </div>
+      <div className="row align-items-center g-5 py-5">
+        {/* Image Section */}
+        <div
+          className="col-12 col-md-6 col-lg-5 order-md-2 text-center"
+          data-aos="fade-right"
+        >
+          <Image
+            src={MyImage}
+            className="d-block mx-auto img-fluid rounded-circle"
+            alt="Tashen Image"
+            width={300}
+            height={300}
+            loading="lazy"
+          />
+        </div>
 
-            <p className={styles.header}>
-              Full Stack Developer with expertise in Java, PHP, Next.js, Node.js, React, Angular, Laravel, Spring Boot, AWS, and Express.js.
-              I have a comprehensive understanding of both backend and frontend frameworks, enabling me to create dynamic, scalable, and responsive applications.
-              Eager to apply my knowledge in real-world projects, showcasing a commitment to continuous learning and innovation in the ever-evolving field of software development.
-            </p>
-            <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-              <Image src={Fb} className="m-lg-1" alt="..." />             
-              <Image src={Inst} className="m-lg-2" alt="..." />
+        {/* Content Section */}
+        <div className="col-12 col-md-6 col-lg-7 text-center text-md-start" data-aos="fade-left">
+          <h1 className={`mb-3 text-white ${concertOne.className}`}>
+            <span>I</span>
+            <span ref={typedElement}></span>
+          </h1>
+          <div className="mb-4">
+            <div className="d-inline-flex align-items-center gap-2">
+              <div className={`${styles.exp} text-primary`}>1+</div>
+              <p className={`${styles.expText} mb-0 text-white`}>Years of Experience</p>
             </div>
+          </div>
+
+          <p className={`${styles.header} text-white`}>
+            Full Stack Developer with expertise in Java, PHP, Next.js, Node.js, React, Angular, Laravel, Spring Boot, AWS, and Express.js.
+            I have a comprehensive understanding of both backend and frontend frameworks, enabling me to create dynamic, scalable, and responsive applications.
+            Eager to apply my knowledge in real-world projects, showcasing a commitment to continuous learning and innovation in the ever-evolving field of software development.
+          </p>
+
+          {/* Social Icons */}
+          <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
+            <Image src={Fb} alt="Facebook Icon" width={30} height={30} />
+            <Image src={Inst} alt="GitHub Icon" width={30} height={30} />
           </div>
         </div>
       </div>
     </div>
-
   );
 }
