@@ -5,7 +5,6 @@ import Fb from "./assests/fbicon.png";
 import Inst from "./assests/gitimg.png";
 import styles from "./page.module.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Typed from 'typed.js';
